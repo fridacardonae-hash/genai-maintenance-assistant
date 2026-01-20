@@ -3,8 +3,13 @@ import numpy as np
 import pandas as pd 
 from sentence_transformers import SentenceTransformer
 from src.llm_client import ask_llm
+import os
 
-model = SentenceTransformer("all-MiniLM-L6-v2")
+os.environ["HF_HUB_OFFLINE"] = "1"
+os.environ["TRANSFORMERS_OFFLINE"] = "1"
+
+
+model = SentenceTransformer("models/all_MiniLM-L6-v2", device="cpu")
 index = faiss.read_index("embeddings/faiss_index.bin")
 df = pd.read_csv("data/issues.csv")
 

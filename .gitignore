@@ -8,3 +8,5 @@ embeddings/
 
 .DS_Store
 Thumbs.db
+
+models/
