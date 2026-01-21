@@ -5,11 +5,12 @@ from sentence_transformers import SentenceTransformer
 from src.llm_client import ask_llm
 import os
 
-os.environ["HF_HUB_OFFLINE"] = "1"
-os.environ["TRANSFORMERS_OFFLINE"] = "1"
+#os.environ["HF_HUB_OFFLINE"] = "1"
+#os.environ["TRANSFORMERS_OFFLINE"] = "1"
 
 
-model = SentenceTransformer("models/all_MiniLM-L6-v2", device="cpu")
+#model = SentenceTransformer("models/all_MiniLM-L6-v2", device="cpu")
+model = SentenceTransformer("all_MiniLM-L6-v2")
 index = faiss.read_index("embeddings/faiss_index.bin")
 df = pd.read_csv("data/issues.csv")
 
